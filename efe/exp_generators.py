@@ -6,7 +6,7 @@ from .experiment import *
 
 
 def parse_line(filename, line,i):
-    if filename == "/content/complex/datasets//codexs/train.tx" or "/content/complex/datasets//codexs/valid.txt" or "/content/complex/datasets//codexs/test.txt":
+    if filename == "/content/complex-codexs-fb15k237/datasets//codexs/train.txt" or filename == "/content/complex-codexs-fb15k237/datasets//codexs/valid.txt" or filename == "/content/complex-codexs-fb15k237/datasets//codexs/test.txt":
       line = line.strip().split("_")
     else:
       line = line.strip().split("\t")
