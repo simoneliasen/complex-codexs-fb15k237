@@ -6,13 +6,15 @@ from .experiment import *
 
 
 def parse_line(filename, line,i):
-	line = line.strip().split("\t")
-	sub = line[0]
-	rel = line[1]
-	obj = line[2]
-	val = 1
-
-	return sub,obj,rel,val
+    if filename == "/content/complex/datasets//codexs/train.tx" or "/content/complex/datasets//codexs/valid.txt" or "/content/complex/datasets//codexs/test.txt":
+      	line = line.strip().split("_")
+    else:
+      	line = line.strip().split("\t")
+    sub = line[0]
+    rel = line[1]
+    obj = line[2]
+    val = 1
+    return sub,obj,rel,val
 
 
 def load_triples_from_txt(filenames, entities_indexes = None, relations_indexes = None, add_sameas_rel = False, parse_line = parse_line):
